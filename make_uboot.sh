@@ -3,10 +3,6 @@
 PHONE_BOARD_VERSION=`echo "$1"|tr "a-z" "A-Z"`
 RSA_ON=`echo "$2"|tr "a-z" "A-Z"`
 
-DIR=$(cd $(dirname "$0"); pwd)
-CROSS_COMPILE_DIR=${DIR/bootable\/bootloader\/uboot/prebuilts\/gcc\/linux-x86\/arm\/arm-eabi-4.6\/bin\/};
-export PATH="$CROSS_COMPILE_DIR:$PATH"
-
 if [ "$PHONE_BOARD_VERSION" = "YL8150S_EVB" ] ; then
 	echo "Select YL8150S EVB board"
 	make distclean; make comip_yl8150s_evb_config; make -s
