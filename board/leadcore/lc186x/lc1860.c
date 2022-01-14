@@ -166,6 +166,9 @@ static void boot_image(void)
 #if defined(CONFIG_USE_KERNEL_RECOVERY)
 		kernel_name = CONFIG_PARTITION_KERNEL_RECOVERY;
 #endif
+	} else if (pu_reason == PU_REASON_REBOOT_FASTBOOT) {
+		printf("run fastboot by reboot command\n");
+		gd->fastboot = 1;
 	} else {
 		ret = keypad_init();
 		if (ret)

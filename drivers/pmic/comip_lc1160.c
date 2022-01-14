@@ -956,6 +956,8 @@ static int lc1160_init(struct pmic_info *info)
 		power_on_type = PU_REASON_PWR_KEY_PRESS;
 	else if (reboot_type == REBOOT_RECOVERY)
 		power_on_type = PU_REASON_REBOOT_RECOVERY;
+	else if (reboot_type == REBOOT_FASTBOOT)
+		power_on_type = PU_REASON_REBOOT_FASTBOOT;
 	else if (reboot_type == REBOOT_FOTA)
 		power_on_type = PU_REASON_REBOOT_FOTA;
 	else if (reboot_type == REBOOT_CRITICAL)
