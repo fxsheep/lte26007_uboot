@@ -8,6 +8,10 @@ DECLARE_GLOBAL_DATA_PTR;
 extern struct memctl_data *memctl_init_datas;
 extern const unsigned int memctl_init_datas_length;
 
+#if CONFIG_SAMSUNG_KMQ310013M
+extern struct memctl_multi_ddr_struct memctl_multi_data_KMQ310013M;
+#endif
+
 #if CONFIG_SAMSUNG_KMR310001M
 extern struct memctl_multi_ddr_struct memctl_multi_data_KMR310001M;
 #endif
@@ -29,6 +33,9 @@ extern struct memctl_multi_ddr_struct memctl_multi_data_H9TQ26ABJTMCUR;
 #define MEMCTL_MULTI_DATA_END	((void*)0xFFFFFFFF)
 struct memctl_multi_ddr_struct *memctl_multi_data[]=
 {
+#if CONFIG_SAMSUNG_KMQ310013M
+	&memctl_multi_data_KMQ310013M,
+#endif
 #if CONFIG_SAMSUNG_KMR310001M
 	&memctl_multi_data_KMR310001M,
 #endif

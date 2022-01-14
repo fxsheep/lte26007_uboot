@@ -39,6 +39,9 @@ endif
 ifdef CONFIG_MULTI_DDR_SUPPORT
 COBJS   += memctl_multi_ddr.o
 
+ifdef CONFIG_SAMSUNG_KMQ310013M
+COBJS   += memctl_inits_KMQ310013M.o
+endif
 ifdef CONFIG_SAMSUNG_KMR310001M
 COBJS   += memctl_inits_KMR310001M.o
 endif
